@@ -1,0 +1,65 @@
+body,
+html {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+
+.tab {
+  display: flex;
+}
+
+.tab li {
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-right: 0 none;
+}
+
+.tab li:last-child {
+  border-right: 1px solid #000;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .modalContents {
+  width: 400px;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 0 20px;
+
+  gap: 10px;
+}
+
+.modal .titleWrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.model .btnClose {
+  align-self: normal;
+}
+
+.modal .myMessage {
+  color: blue;
+  background-color: lightcoral;
+}
