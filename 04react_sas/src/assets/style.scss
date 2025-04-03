@@ -1,0 +1,54 @@
+$main-color: yellow;
+$font-basic-size: 20px;
+
+.test {
+  background-color: $main-color;
+  font-size: $font-basic-size;
+}
+
+// .hd {
+//   background-color: skyblue;
+//   display: flex;
+// }
+
+// .hd .menu {
+//   display: flex;
+// }
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hd {
+  background-color: pink;
+  display: flex;
+  gap: 30px;
+  box-shadow: 10px 10px 20px lightgray;
+  .menu {
+    display: flex;
+    gap: 50px;
+    li {
+      background-color: pink;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      height: 100%;
+
+      &.active {
+        background-color: blue;
+        color: white;
+      }
+      &:hover {
+        background-color: yellow;
+      }
+    }
+  }
+}

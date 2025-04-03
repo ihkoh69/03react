@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(128, 128, 128, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modelContents {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px lightcoral;
+
+    .titleWrap {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .btnClose {
+      align-self: end;
+    }
+  }
+}
