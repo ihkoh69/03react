@@ -11,8 +11,8 @@ function App() {
     setView(false);
   }
 
-  function doModal() {
-    setNum(0);
+  function doModal(i) {
+    setNum(i);
     setView(true);
   }
 
@@ -21,11 +21,23 @@ function App() {
       <h3>myTour</h3>
       <ul>
         {myData.map((item, i) => {
-          return <>{<li onClick={setNum}>{item.title}</li>}</>;
+          return (
+            <>
+              {
+                <li
+                  onClick={() => {
+                    doModal(i);
+                  }}
+                >
+                  {item.title}
+                </li>
+              }
+            </>
+          );
         })}
       </ul>
       {view ? (
-        <ModalComp sendData={myData} setNum={num} unModal={unModal} />
+        <ModalComp sendData={myData} sendNum={num} unModal={unModal} />
       ) : null}
     </>
   );
