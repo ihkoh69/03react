@@ -1,0 +1,27 @@
+create table wp_log (
+id int(11) not null auto_increment,
+uid varchar(100) default null,
+uname varchar(100) default null,
+`desc` varchar(100) default null,
+dt datetime default null,
+ip varchar(16) not null,
+primary key('id')
+)
+
+
+function logs($str)
+{
+global $wpdb;
+
+if(is_user_logged_in()) {
+    $uid = wp_get_current_user()->ID;
+    $uname = wp_get_current_user()->display_name;
+}
+else
+{
+    return -1;
+}
+$ip = $_SERVER['REMOTE_ADDR'];
+
+$wpdb->insert('wp_log', array('uid'=>$uid, 'uname' => $uname, 'desc' => $str, 'ip' => $ip,
+'dt' => date('Y-m-d H:i:s', current_time('timestamp'))));

@@ -1,0 +1,11 @@
+1. todo data  만들기
+2. todo.map(()=>{return(<>{item.text}</<>)})
+2-1 할일 표시 item.text
+2-2 완료여부 표시 item. completed -> 스타일 지정(line-through)
+2-3 삭제 버튼 표시 , 인자값 item.id onClick( ()=>{ deleteFunc(item.id)  } ) * 무명함수를 쓰지 않고 바로 함수를 호출하면 제대로 작동하지 않는다.
+3. delete 함수 작성, useState 생성 
+4. 추가버튼 이벤트 실행. (함수 작성기) input 대응 useState 작성
+5. input 에 onChange() 작성  onChanbge(addTodo) ----- > addTodo () 작성
+6. item.text 클릭 시 toggleTodo() 작성 todoList.map((item)=>{
+return( item.id === id ? {...item, completed:!item.completed} : item );
+})
