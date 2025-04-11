@@ -18,7 +18,7 @@ function App() {
   const signguCd = "11110"; // 시군구코드(연관관광지 조회 시 사용하는 코드체계)
   const baseYm = "202412"; // 기준월
 
-  const contentTypeId = "12"; //관광타입
+  const contentTypeId = ""; //관광타입
   const cat1 = "B02"; //대분류
   const cat2 = "B0201"; //중분류
   const cat3 = "B02011000"; //소분류
@@ -41,10 +41,9 @@ function App() {
   const empmnInfoNo = "kotga98_2"; //채용공고번호
 
   const eventStartDate = "20250411"; // 축제/이벤트 시작일자
-  const contentId = "126508"; // 관광정보 컨텐츠의 고유 id
 
-  // const API_URL = `https://apis.data.go.kr/B551011/KorService1/detailCommon1?serviceKey=${API_KEY}&MobileOS=ETC&MobileApp=AppTest&contentId=126508&contentTypeId=12&defaultYN=Y&firstImageYN=Y&areacodeYN=Y&catcodeYN=Y&addrinfoYN=Y&mapinfoYN=Y&overviewYN=Y&pageNo=${pageNo}&numOfRows=${numOfRows}&_type=json`;
-  const API_URL = `https://apis.data.go.kr/B551011/KorService1/detailIntro1?serviceKey=${API_KEY}&MobileOS=ETC&MobileApp=AppTest&contentId=${contentId}&contentTypeId=${contentTypeId}&pageNo=${pageNo}&numOfRows=${numOfRows}&_type=json`;
+  // const API_URL = `http://apis.data.go.kr/B551011/tursmService/empmnInfoDetail?serviceKey=${API_KEY}&MobileApp=AppTest&MobileOS=ETC&empmnInfoNo=${empmnInfoNo}&pageNo=${pageNo}&numOfRows=${numOfRows}&_type=json`;
+  const API_URL = `http://apis.data.go.kr/B551011/KorService1/searchFestival1?serviceKey=${API_KEY}&MobileOS=ETC&MobileApp=AppTest&arrange=O&listYN=Y&eventStartDate=${eventStartDate}&pageNo=${pageNo}&numOfRows=${numOfRows}&_type=json`;
 
   const [myData, setData] = useState([]);
   const [totalCount, setTotal] = useState("");
@@ -74,11 +73,24 @@ function App() {
               return (
                 <>
                   <tr>
-                    <td>{item.contentid}</td>
-                    <td>{item.infocenter}</td>
-                    <td>{item.parking}</td>
-                    <td>{item.restdate}</td>
-                    <td>{item.usetime}</td>
+                    <td>{item.title}</td>
+                    <td>{item.areacode}</td>
+                    <td>{item.sigungucode}</td>
+                    <td>{item.addr1}</td>
+                    <td>{item.addr2}</td>
+                    <td>{item.eventstartdate}</td>
+                    <td>{item.eventenddate}</td>
+                    <td>{item.tel}</td>
+                    <td>
+                      {item.firstimage2 ? <img src={item.firstimage2} /> : null}
+                    </td>
+                    <td>
+                      {item.tursmEmpmnInfoURL ? (
+                        <a href={item.tursmEmpmnInfoURL} target="_new">
+                          지원 홈페이지
+                        </a>
+                      ) : null}
+                    </td>
                   </tr>
                 </>
               );
