@@ -9,6 +9,7 @@ function NavComp() {
       <div className="flex justify-between gap-3 p-2 m-2">
         <Link to="/">Home</Link>
         <Link to="/list">List</Link>
+        <Link to="/view/1">VIEW</Link>
       </div>
     </div>
   );

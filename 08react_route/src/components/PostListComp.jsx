@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import NavComp from "./NavComp";
+import FooterComp from "./FooterComp";
+import { Link } from "react-router-dom";
 
 function PostListComp() {
   const [myData, setData] = useState([]);
@@ -23,14 +25,19 @@ function PostListComp() {
         {myData.map((item) => {
           return (
             <>
-              <div className="p-3 m-3 border rounded bg-blue-50">
-                <p>{item.title}</p>
-                <p>{item.body}</p>
+              <div className="flex justify-between p-3 m-3 border rounded bg-blue-50">
+                <Link to={`/view/${item.id}`}>
+                  <p>{item.title}</p>
+                </Link>
+                <Link to={`/view/${item.id}/comment`}>
+                  <button>댓글보기</button>
+                </Link>
               </div>
             </>
           );
         })}
       </div>
+      <FooterComp />
     </>
   );
 }
