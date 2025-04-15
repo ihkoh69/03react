@@ -3,6 +3,7 @@ import NavComp from "./NavComp";
 import FooterComp from "./FooterComp";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function CommentComp() {
   const { id } = useParams();
@@ -28,9 +29,10 @@ function CommentComp() {
   }, []);
   return (
     <>
-      <NavComp />
-      <div className="container mx-auto">
-        <h4>댓글리스트 / {id} </h4>
+      <div className="container mx-auto mt-10">
+        <h4>
+          댓글리스트 / <Link to="/list">목록으로 돌아가기</Link>
+        </h4>
         {loading ? <p>데이터로딩중</p> : null}
         <div>
           {myData.map((item) => {
@@ -46,7 +48,6 @@ function CommentComp() {
           })}
         </div>
       </div>
-      <FooterComp />
     </>
   );
 }

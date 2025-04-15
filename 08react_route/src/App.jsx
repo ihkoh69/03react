@@ -4,6 +4,7 @@ import PostListComp from "./components/PostListComp";
 // import NavComp from "./components/NavComp";
 import ViewComp from "./components/ViewComp";
 import CommentComp from "./components/CommentComp.";
+import "./App.css";
 
 function App() {
   return (

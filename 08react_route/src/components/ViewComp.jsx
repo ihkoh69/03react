@@ -3,6 +3,7 @@ import NavComp from "./NavComp";
 import FooterComp from "./FooterComp";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import CommentComp from "./CommentComp.";
 
 function ViewComp() {
   const { id } = useParams();
@@ -67,6 +68,7 @@ function ViewComp() {
           <p>내용 : {view.body}</p>
         </div>
       </div>
+      <CommentComp />
       <FooterComp />
     </>
   );
