@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --color-mint-500: oklch(0.72 0.11 178);
+}
+
+body {
+  width: 900px;
+  margin: 0 auto;
+}
